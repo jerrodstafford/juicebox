@@ -237,7 +237,7 @@ const getPostById = async(postId) => {
             WHERE post_tags."postId"=$1;
         `, [postId])
 
-        const tagsList = tags.map (tag => tag.name )
+
         const { rows: [ author ] } = await client.query(`
             SELECT id, username, name, location
             FROM users
